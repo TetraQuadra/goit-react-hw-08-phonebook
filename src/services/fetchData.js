@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { API_BASE_URL } from 'config';
 
-const contactAPI = axios.create({
+export const contactAPI = axios.create({
   baseURL: API_BASE_URL,
 });
 
