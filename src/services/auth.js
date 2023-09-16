@@ -29,7 +29,7 @@ export const logout = async token => {
 
 export const register = async userData => {
   try {
-    await contactAPI.post('/users/register', userData);
+    await contactAPI.post('/users/signup', userData);
     return 'succeed';
   } catch (error) {
     throw error;
