@@ -1,16 +1,15 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-// import { register } from 'services/auth';
+import { register } from 'services/auth';
 import styles from './RegisterForm.module.css';
 
-const register = (data) => {
-
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve("succeed");
-        }, 1000);
-    });
-}
+// const register = (data) => {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve("succeed");
+//         }, 1000);
+//     });
+// }
 
 
 export const RegisterForm = () => {
