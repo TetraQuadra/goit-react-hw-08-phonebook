@@ -27,7 +27,6 @@ export const RegisterForm = () => {
 
         if (response === "succeed") {
             setResponse('succeed')
-
         }
 
     };
@@ -43,15 +42,21 @@ export const RegisterForm = () => {
                 <form className={styles.form} onSubmit={handleSubmit}>
                     <label className={styles.label}>
                         <p>Name</p>
-                        <input className={styles.input} type="name" name="name" />
+                        <input
+                            required
+                            className={styles.input} type="name" name="name" />
                     </label>
                     <label className={styles.label}>
                         <p>Email</p>
-                        <input className={styles.input} type="email" name="email" />
+                        <input
+                            required
+                            className={styles.input} type="email" name="email" />
                     </label>
                     <label className={styles.label}>
                         <p>Password</p>
-                        <input className={styles.input} type="password" name="password" />
+                        <input required
+                            minLength="7"
+                            className={styles.input} type="password" name="password" />
                     </label>
                     <button type="submit" className={styles.button}>Register</button>
                 </form>}
