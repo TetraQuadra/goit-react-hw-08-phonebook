@@ -14,6 +14,7 @@ import styles from './RegisterForm.module.css';
 
 export const RegisterForm = () => {
     const [response, setResponse] = useState('')
+    const [error, setError] = useState('')
 
     const handleSubmit = async event => {
         event.preventDefault();
@@ -23,10 +24,15 @@ export const RegisterForm = () => {
             email: formData.get('email'),
             password: formData.get('password')
         }
-        const response = await register(userData)
+        try {
+            const response = await register(userData)
 
-        if (response === "succeed") {
-            setResponse('succeed')
+            if (response === "succeed") {
+                setResponse('succeed')
+            }
+        } catch (error) {
+            setError('something gone wrong, try f5 and use another email')
+
         }
 
     };
@@ -40,6 +46,7 @@ export const RegisterForm = () => {
                 </div>
                 :
                 <form className={styles.form} onSubmit={handleSubmit}>
+                    {error && <p className={styles.error}>{error}</p>}
                     <label className={styles.label}>
                         <p>Name</p>
                         <input
