@@ -5,27 +5,39 @@ export const contactAPI = axios.create({
   baseURL: API_BASE_URL,
 });
 
-export const fetchContacts = async () => {
+const attachHeader = token => {
+  return {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+};
+
+export const fetchContacts = async token => {
+  const config = attachHeader(token);
+  console.log(config);
   try {
-    const response = await contactAPI.get('/contacts');
+    const response = await contactAPI.get('/contacts', config);
     return response.data;
   } catch (error) {
     throw error;
   }
 };
 
-export const addContact = async contact => {
+export const addContact = async ({ token, contact }) => {
+  const config = attachHeader(token);
   try {
-    const response = await contactAPI.post('/contacts', contact);
+    const response = await contactAPI.post('/contacts', contact, config);
     return response.data;
   } catch (error) {
     throw error;
   }
 };
 
-export const deleteContact = async id => {
+export const deleteContact = async ({ token, id }) => {
+  const config = attachHeader(token);
   try {
-    const response = await contactAPI.delete(`/contacts/${id}`);
+    const response = await contactAPI.delete(`/contacts/${id}`, config);
     return response.data;
   } catch (error) {
     throw error;

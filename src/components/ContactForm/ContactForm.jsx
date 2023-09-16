@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addContactsThunk } from 'redux/contactsThunk';
 
 const ContactForm = () => {
@@ -8,7 +8,7 @@ const ContactForm = () => {
     name: '',
     number: '',
   });
-
+  const token = useSelector((state) => state.auth.token);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setContact((prevContact) => ({
@@ -19,7 +19,7 @@ const ContactForm = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    dispatch(addContactsThunk(contact))
+    dispatch(addContactsThunk({ contact, token }))
   };
 
   return (

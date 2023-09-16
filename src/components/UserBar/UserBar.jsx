@@ -15,7 +15,15 @@ function UserBar() {
     return (
         <>
             {
-                username ? <div>{username} <button onClick={handleLogout} type='button'>Logout</button></div> : <div><Link to="login">Login</Link><Link to="register">Register</Link></div>
+                username ?
+                    <div>{username}
+                        <button onClick={handleLogout} type='button'>Logout</button>
+                    </div>
+                    :
+                    <div>
+                        <Link to="/login">Login</Link>
+                        <Link to="/register">Register</Link>
+                    </div>
             }
         </>
 

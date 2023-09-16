@@ -3,9 +3,9 @@ import { addContact, deleteContact, fetchContacts } from 'services/fetchData';
 
 export const getContactsThunk = createAsyncThunk(
   'contacts/allContacts',
-  async (_, { reject }) => {
+  async (token, { reject }) => {
     try {
-      const data = fetchContacts();
+      const data = fetchContacts(token);
       return data;
     } catch (error) {
       return reject(error.message);

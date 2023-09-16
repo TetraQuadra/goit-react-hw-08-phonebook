@@ -6,13 +6,13 @@ import { delContactsThunk, getContactsThunk } from 'redux/contactsThunk';
 const ContactList = () => {
   const dispatch = useDispatch();
   const filtered = useSelector((state) => state.filter.filtered);
-
+  const token = useSelector((state) => state.auth.token);
   useEffect(() => {
-    dispatch(getContactsThunk());
-  }, [dispatch]);
+    dispatch(getContactsThunk(token));
+  }, [dispatch, token]);
 
   const handleRemoveContact = (id) => {
-    dispatch(delContactsThunk(id));
+    dispatch(delContactsThunk({ id, token }));
   };
 
   return (
