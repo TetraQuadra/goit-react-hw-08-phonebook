@@ -43,16 +43,16 @@ export const RegisterForm = () => {
                 :
                 <form className={styles.form} onSubmit={handleSubmit}>
                     <label className={styles.label}>
-                        Name
-                        <input type="name" name="name" />
+                        <p>Name</p>
+                        <input className={styles.input} type="name" name="name" />
                     </label>
                     <label className={styles.label}>
-                        Email
-                        <input type="email" name="email" />
+                        <p>Email</p>
+                        <input className={styles.input} type="email" name="email" />
                     </label>
                     <label className={styles.label}>
-                        Password
-                        <input type="password" name="password" />
+                        <p>Password</p>
+                        <input className={styles.input} type="password" name="password" />
                     </label>
                     <button type="submit" className={styles.button}>Register</button>
                 </form>}

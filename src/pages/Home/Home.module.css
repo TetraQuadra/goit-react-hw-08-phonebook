@@ -1,0 +1,24 @@
+.headerWrapper {
+    text-align: center;
+}
+
+.header {
+    margin-bottom: 50px;
+}
+
+.loggedOut {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.loginLink,
+.registerLink {
+    padding: 8px 16px;
+    background-color: rgb(14, 118, 255);
+}
+
+.loginLink:hover,
+.registerLink:hover {
+    background-color: rgb(101, 168, 255);
+}

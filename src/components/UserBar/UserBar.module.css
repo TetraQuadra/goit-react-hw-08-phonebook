@@ -1,0 +1,32 @@
+.userSection {
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.loggedIn {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.logoutButton {
+    font-weight: 600;
+    background-color: inherit;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    padding: 4px 6px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.logoutButton:hover {
+    color: rgb(255, 0, 0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    background-color: rgba(223, 0, 0, 0.233);
+}
+
+.loginLink {
+    margin-right: 10px;
+}

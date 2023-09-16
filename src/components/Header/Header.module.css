@@ -1,0 +1,25 @@
+.header {
+    background-color: rgb(14, 118, 255);
+    color: #fff;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+
+.navList {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 30px;
+    display: flex;
+}
+
+.navItem {
+    margin-right: 20px;
+}
+
+.navLink {
+    text-decoration: none;
+}

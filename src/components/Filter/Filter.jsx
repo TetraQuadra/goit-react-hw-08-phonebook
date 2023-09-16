@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from 'redux/filterSlice';
+import styles from './Filter.module.css'
 
 export const Filter = () => {
     const [input, setInput] = useState('')
@@ -19,7 +20,9 @@ export const Filter = () => {
     }, [input, contacts, dispatch])
 
     return (
+
         <input
+            className={styles.input}
             value={input}
             type="text"
             placeholder="Search by name"
