@@ -13,6 +13,11 @@
     margin-top: 100px;
 }
 
+.response {
+    margin: 0 auto;
+    text-align: center;
+}
+
 .label p {
     margin-bottom: 10px;
     font-weight: bold;

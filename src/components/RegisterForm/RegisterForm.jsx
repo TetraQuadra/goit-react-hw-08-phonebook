@@ -35,9 +35,9 @@ export const RegisterForm = () => {
     return (
         <>
             {response === 'succeed' ?
-                <div>
-                    <h1>Registration successfull</h1>
-                    <Link to="/login">Login</Link>
+                <div className={styles.response}>
+                    <h2>Registration successfull</h2>
+                    <Link className={styles.button} to="/login">Login</Link>
                 </div>
                 :
                 <form className={styles.form} onSubmit={handleSubmit}>
