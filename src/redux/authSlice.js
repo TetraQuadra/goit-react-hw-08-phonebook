@@ -8,7 +8,6 @@ const userInitialState = {
 };
 
 const handlePending = () => {
-  console.log('first');
   return;
 };
 

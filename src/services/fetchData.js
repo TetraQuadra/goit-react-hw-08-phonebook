@@ -15,7 +15,6 @@ const attachHeader = token => {
 
 export const fetchContacts = async token => {
   const config = attachHeader(token);
-  console.log(config);
   try {
     const response = await contactAPI.get('/contacts', config);
     return response.data;

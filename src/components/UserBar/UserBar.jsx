@@ -8,7 +8,6 @@ function UserBar() {
     const username = useSelector(state => state.auth.name)
     const token = useSelector(state => state.auth.token)
     const handleLogout = () => {
-        console.log("first")
         dispatch(logoutThunk(token))
     }
 

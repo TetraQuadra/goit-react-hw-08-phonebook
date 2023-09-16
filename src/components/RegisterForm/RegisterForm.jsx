@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import styles from './RegisterForm.module.css';
 
 const register = (data) => {
-    console.log("register");
+
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve("succeed");
@@ -25,7 +25,7 @@ export const RegisterForm = () => {
             password: formData.get('password')
         }
         const response = await register(userData)
-        console.log(response)
+
         if (response === "succeed") {
             setResponse('succeed')
 
