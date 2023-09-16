@@ -11,7 +11,7 @@ function Home() {
                 <h1 className={styles.header}>Create your very own contacts list!</h1>
                 {username ? (
                     <div className={styles.loggedIn}>
-                        <Link to="/contacts" className={styles.loginLink}>Use contacts</Link>
+                        <Link to="/contacts" className={styles.loginLink}>Open contacts</Link>
                     </div>
                 ) : (
                     <div className={styles.loggedOut}>
