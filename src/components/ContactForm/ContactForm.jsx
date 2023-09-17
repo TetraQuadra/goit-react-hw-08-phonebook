@@ -9,6 +9,7 @@ const ContactForm = () => {
     name: '',
     number: '',
   });
+  const contacts = useSelector(state => state.contacts.contacts)
   const token = useSelector((state) => state.auth.token);
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,7 +21,16 @@ const ContactForm = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    dispatch(addContactsThunk({ contact, token }))
+    if (
+      contacts.find(
+        contacts => contacts.name.toLowerCase() === contact.name.toLowerCase()
+      )
+    ) {
+      alert('Contact already exists!');
+    } else {
+      dispatch(addContactsThunk({ contact, token }))
+    }
+
   };
 
   return (

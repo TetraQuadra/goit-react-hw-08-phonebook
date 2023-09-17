@@ -19,6 +19,7 @@ export const App = () => {
           path="/register"
           element={
             <NotLoginedPath
+              redirectTo="/contacts"
               component={<RegisterPage />}
             />
           }
@@ -26,13 +27,17 @@ export const App = () => {
         <Route
           path="/login"
           element={
-            <NotLoginedPath redirectTo="/contacts" component={<LoginPage />} />
+            <NotLoginedPath
+              redirectTo="/contacts"
+              component={<LoginPage />} />
           }
         />
         <Route
           path="/contacts"
           element={
-            <LoginedPath redirectTo="/login" component={<Contacts />} />
+            <LoginedPath
+              redirectTo="/login"
+              component={<Contacts />} />
           }
         />
       </Routes>
